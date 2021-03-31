@@ -10,7 +10,9 @@ import { Observable } from 'rxjs';
 import { AppSettingsService } from '../shared/services/app-settings.service';
 import { AuthenticationInterceptor } from './interceptor/authentication.interceptor.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+type AppSettingSet = {
 
+}
 
 export const settingsFactory = (appSettingsService: AppSettingsService) => {
   return (): Observable<AppSettingSet> => appSettingsService.loadSettings();
