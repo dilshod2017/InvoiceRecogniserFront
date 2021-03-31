@@ -20,12 +20,16 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/InvoiceRecogniserFront",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "allowedCommonJsDependencies": [
+                "rxjs/add/operator/catch",
+                "rxjs/add/operator/deboundceTime"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -33,7 +37,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -96,7 +102,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           }
         },
         "lint": {
@@ -127,5 +135,8 @@
       }
     }
   },
-  "defaultProject": "InvoiceRecogniserFront"
+  "defaultProject": "InvoiceRecogniserFront",
+  "cli": {
+    "analytics": false
+  }
 }
